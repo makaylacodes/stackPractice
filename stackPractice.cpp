@@ -1,20 +1,35 @@
-// stackPractice.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+// LIFO- Last in first out. 
+//Think of an undo button or the front/back buttons in browser
+// functions to use with stacks empty, size, top, push, pop
 #include <iostream>
+#include <stack>
+using namespace std;
+
+//asks for top element, displays it and then pops it on repeat while not empty
+void print(stack<int>number) {
+    while (!number.empty()) {
+        cout << number.top() << endl;
+        number.pop();
+    }
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    stack<int>numbersStack;
+
+    numbersStack.push(12);
+    numbersStack.push(2);
+    numbersStack.push(42);
+
+    //numbersStack.pop();
+
+    if (numbersStack.empty()) {
+        cout << "Stack is empty\n";
+    }
+    else {
+        cout << "Stack is not empty\n";
+        }
+    cout << "Stack size is " << numbersStack.size() << endl;
+
+    print(numbersStack);
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
